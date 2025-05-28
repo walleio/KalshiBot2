@@ -15,8 +15,8 @@ from cryptography.exceptions import InvalidSignature
 
 class KalshiDataset(Dataset):
     def __init__(self):
-        self.data_df = pd.read_csv('data.csv')
-        self.label_df = pd.read_csv('labels.csv')
+        self.data_df = pd.read_csv('../large_files/data.csv')
+        self.label_df = pd.read_csv('../large_files/labels.csv')
         self.seq_len = self.data_df['dict'].map(lambda s: len(ast.literal_eval(s))).max()
 
     def __len__(self):

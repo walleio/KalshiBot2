@@ -74,7 +74,7 @@ def parse_dict(s):
     return out
 
 # load the model
-inference_model = torch.load("model.pth")
+inference_model = torch.load("../large_files/model.pth")
 inference_model.eval()
 
 # initialize the client (used for api calls)
