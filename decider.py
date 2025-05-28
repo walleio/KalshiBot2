@@ -163,10 +163,13 @@ def buy_holdings(candlesticks, holdings):
                     print(f'{key} bought, status: {result[0]}')
 
 def sell_holdings(holdings, candlesticks, currently_selling):
-    # do a quick removal of anything that has been selling for more than 3 minutes
+    keys_to_delete = []
     for key, value in currently_selling.items():
         if time.time() - value > 180:
-            del(currently_selling[key])
+            keys_to_delete.append(key)
+    
+    for key in keys_to_delete:
+        del(currently_selling[key])
 
     for key, value in candlesticks.items():
         data = get_item(value)
