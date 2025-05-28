@@ -1,0 +1,1 @@
+This is a Kalshi trading bot, using convolutional neural networks and vanilla neural networks, it is trained on time-series (candlesticks) data and makes predictions regarding the price of a market at the next minute.
